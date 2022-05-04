@@ -1,12 +1,14 @@
-<view>
-  <text class="text-box">1.第一个题11111111111111111111111111111111</text>
-  <radio-group class='radio-group' name='answer'>
-   <label class='radio'><radio  color='#fcbe39' />A</label>
-   <label class='radio'><radio  color='#fcbe39' />B</label>     
-   <label class='radio'><radio  color='#fcbe39' />C</label>
-   <label class='radio'><radio  color='#fcbe39' />D</label>
-  </radio-group>
-  <text class="text-box">2.第二个题11111111111111111111111111111111111122222222</text>
+<view class="fixed">
+  <view wx:for="{{subjectList}}" wx:key="index">
+    <text class="text-box">{{index + 1}}. {{ item.text }}</text>
+    <radio-group class='radio-group' name='answer' bindchange="chooseAnswer" data-field="{{index}}">
+    <label class='radio'><radio  color='#fcbe39' value="1" />A</label>
+    <label class='radio'><radio  color='#fcbe39' value="2" />B</label>     
+    <label class='radio'><radio  color='#fcbe39' value="3" />C</label>
+    <label class='radio'><radio  color='#fcbe39' value="4" />D</label>
+    </radio-group>
+  </view>
+  <!-- <text class="text-box">2.第二个题11111111111111111111111111111111111122222222</text>
   <radio-group class='radio-group' name='answer'>
    <label class='radio'><radio  color='#fcbe39' />A</label>
    <label class='radio'><radio  color='#fcbe39' />B</label>     
@@ -30,11 +32,16 @@
    <label class='radio'><radio  color='#fcbe39' />B</label>     
    <label class='radio'><radio  color='#fcbe39' />C</label>
    <label class='radio'><radio  color='#fcbe39' />D</label>
-  </radio-group>
+  </radio-group> -->
+  <button bindtap="submitAnswer">提交</button>
+
+  <view wx:if="{{result}}">
+    <view class="scores">您获得了{{ score }}分</view>
+    <view class="scores">{{ message }}</view>
+    <!-- <view class="scores">您受到电信诈骗的几率很小</view>
+    <view class="scores">您受到电信诈骗的几率中等</view>
+    <view class="scores">您受到电信诈骗的几率较大</view> -->
+  </view>
 </view>  
-<button>提交</button>
-<view class="scores">您获得了90分</view>
-<view class="scores">您受到电信诈骗的几率很小</view>
-<view class="scores">您受到电信诈骗的几率中等</view>
-<view class="scores">您受到电信诈骗的几率较大</view>
+
 

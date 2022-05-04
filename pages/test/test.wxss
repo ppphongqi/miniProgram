@@ -26,4 +26,7 @@ radio-group {
   flex-direction: row;
   justify-content: center;
 }
+.fixed{
+  padding-bottom: 100rpx;
+}
 

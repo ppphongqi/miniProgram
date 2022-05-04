@@ -33,10 +33,13 @@
   margin-top: 20rpx;
 }
 .comment-face{
-  width: 100rpx;
+  width: 60rpx;
   height: 60rpx;
   border-radius: 20rpx;
-  margin-right: 20rpx;
+  /* margin: auto; */
+  margin: 20rpx;
+  /* margin-right: 20rpx;
+  margin-left: 20rpx; */
 }
 
 .nickname-time{

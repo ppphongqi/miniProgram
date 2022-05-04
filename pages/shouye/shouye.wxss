@@ -1,0 +1,33 @@
+.details-box{
+  text-align: right;
+  margin: 5rpx 10rpx 0rpx 0rpx;
+}
+.details{
+  width: 65rpx;
+  height: 65rpx;
+}
+.text{
+  font-size:100rpx;
+  font-weight: 500;
+  font-style: normal;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+.text-box{
+  margin-top: 200rpx;
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+}
+.button-box{
+  text-align: center;
+}
+.button{
+  margin-top: 10rpx;
+}
+.beijing-box{
+  width: 100%;
+  height:1215rpx;
+  background-color: cornsilk;
+  text-align: center;
+}

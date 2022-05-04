@@ -1,0 +1,17 @@
+<view class="beijing-box">
+<view class="details-box">
+  <image class="details" src="/images/details.png" bindtap="toremarks"></image>
+</view>
+<view class="text-box">
+  <text class="text">防骗小助手</text>
+</view>
+  <view class="button-box">
+  <button class="button" bindtap="totest">防骗测试</button>
+  <button class="button" bindtap="tovideo">宣传视频</button>
+  <button class="button" bindtap="toindex">防骗论坛</button>
+  </view>
+</view>
+
+
+
+

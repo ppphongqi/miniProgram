@@ -1,0 +1,36 @@
+
+<view class="pub-wrap">
+
+  <view class="pub-text" bindtap="submitData">发布</view>
+</view>
+
+<view class="input-wrap">
+  <textarea placeholder="描述案例..." class="input-text" maxlength="2000" bindinput="getValue"></textarea>
+</view>
+
+
+
+<view class="img-wrap"  wx:if="{{!videoUrl}}" >
+
+
+  <block wx:for="{{cloudImgList}}" wx:key="index">
+    <view class="one-img">
+      <image src="{{item}}" class="img-choose"></image>
+      <image src="/images/close.png" class="close-img" bindtap="deleteImg" data-index="{{index}}"></image>
+    </view>
+  </block>
+ 
+  
+  <view class="one-img" bindtap="chooseImage" wx:if="{{cloudImgList.length < 9}}">
+    <image src="/images/add.png" class="img-choose"></image>
+  </view>
+</view>
+
+<video class="video-cell" wx:if="{{videoUrl}}" src="{{videoUrl}}"></video>
+
+
+<view bindtap="chooseAddress" class="choose-localtion">{{localtion}}</view>
+
+
+
+<view wx:if="{{cloudImgList.length == 0}}" class="choose-localtion" bindtap="chooseVideo">上传视频</view>

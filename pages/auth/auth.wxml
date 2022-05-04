@@ -1,0 +1,7 @@
+
+
+
+
+<!-- <button open-type="getUserInfo" bindgetuserinfo="getInfo">授权登录</button> -->
+
+<button bindtap="getInfo">授权登录</button>

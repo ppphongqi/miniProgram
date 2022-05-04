@@ -1,0 +1,140 @@
+
+
+
+
+
+
+<view class="message">
+
+  <view class="left">
+    <image class="face-img" src="{{action.faceImg}}"></image>
+  </view>
+
+  <view class="right">
+    <view class="nickname">{{action.nickName}}</view>
+    <view>
+      {{action.text}}
+    </view>
+
+    
+    <view class="imags-wrap">
+
+      <block wx:for="{{action.images}}" wx:key="index">
+
+        <block wx:if="{{action.images.length == 1}}">
+          <!-- 单图布局 -->
+          <image src="{{item}}" class="image-1" bindtap="previewImg" data-src="{{item}}"></image>
+        </block>
+
+      
+        <block wx:if="{{action.images.length == 2 || action.images.length == 3}}">
+          <!-- 2-3张图布局 -->
+          <image src="{{item}}" class="image-2-3" bindtap="previewImg" data-src="{{item}}"></image>
+        </block>
+
+      
+        <block wx:if="{{action.images.length == 4}}">
+          <!-- 4图布局 -->
+          <image src="{{item}}" class="image-4" bindtap="previewImg" data-src="{{item}}"></image>
+        </block>
+
+        <block wx:if="{{action.images.length > 4}}">
+          <!-- 5-9张图布局 -->
+          <image src="{{item}}" class="image-5-9" bindtap="previewImg" data-src="{{item}}"></image>
+        </block>
+
+      </block>
+
+    </view>
+
+
+    <video class="video-cell" wx:if="{{action.video}}" src="{{action.video}}"></video>
+
+
+    <view class="time-delete">
+      <view class="time">{{action.time}}</view>
+      <view class="delete" bindtap="delete" wx:if="{{openid == action._openid}}">删除</view>
+    </view>
+
+    <view class="addreess" bindtap="opendLocation" wx:if="{{action.address}}">{{action.address}}</view>
+
+
+    <view class="hudong-box">
+
+      <button open-type="share" size="mini" class="share-button">
+        <view class="hudong-cell">
+          <image src="/images/share.png" class="hudong-img"></image>
+          <view class="share-text">分享</view>
+        </view>
+      </button>
+
+      <view class="hudong-cell">
+        <image src="/images/comment.png" class="hudong-img"></image>
+        <view>{{action.commentList.length>0?action.commentList.length:'评论'}}</view>
+      </view>
+
+      <view class="hudong-cell" bindtap="pirzeAction">
+        <image src="{{action.isPrized?'/images/prize_yes.png':'/images/prize.png'}}" class="hudong-img"></image>
+        <view>{{action.prizeList.length>0?action.prizeList.length:'点赞'}}</view>
+      </view>
+    </view>
+
+   
+
+  </view>
+
+
+</view>
+
+<view class="prize-box" wx:if="{{action.prizeList.length > 0}}">
+  <view>
+    <image class="prize-blue-img" src="/images/prize-blue.png"></image>
+  </view>
+  <view class="prize-img-box">
+
+    <block wx:for="{{action.prizeList}}">
+      <image class="prize-img" src="{{item.faceImg}}"></image>
+    </block>
+
+  </view>
+</view>
+
+<view class="comment-box" wx:if="{{action.commentList.length > 0}}">
+  <view class="comment-left">
+    <image src="/images/comment-blue.png" class="comment-log"></image>
+  </view>
+
+  <view class="comment-right">
+
+    <block wx:for="{{action.commentList}}" wx:key="index">
+      <view class="comment-one" bindlongtap="{{openid == item.openid?'deleteComment':''}}" data-index="{{index}}" bindtap="huifuComment">
+        <image src="{{item.faceImg}}" class="comment-face"></image>
+        <view class="comment-content">
+          <view class="nickname-time">
+            <view class="comment-nickname">{{item.nickName}}</view>
+            <view class="comment-time">{{item.time}}</view>
+          </view>
+
+          <view class="comment-text">
+            <text wx:if="{{item.toOpenid}}">回复<text class="comment-obj">{{item.toNickname}}：</text></text>{{item.text}}
+          </view>
+
+
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+
+</view>
+
+<view style="height:200rpx"></view>
+
+<view class="pub-comment">
+  <view class="pub-left">
+    <input class="pub-input" placeholder="{{plcaceHolder}}" bindinput="getInputValue" value="{{inputValue}}"></input>
+  </view>
+
+  <view class="pub-button" bindtap="publishComment">发送</view>
+</view>

@@ -1,0 +1,56 @@
+<video class="video-box" src="" controls="true"></video>
+<view class="pub-comment">
+  <view class="pub-left">
+   <input class="pub-input" placeholder="评论" bindinput="getInputValue"></input>
+  </view>
+  <view class="pub-button" bindtap="publishVideoComment">发送</view>
+</view>
+
+<view class="comment-1">
+      <image src="/images/face.png" class="comment-face"></image>
+      <view class="comment-content">
+        <view class="nickname-time">
+           <view class="comment-nickname">防骗小助手</view>
+           <view class="comment-time">2022-4-26 20:16</view>
+        </view>
+        <view class="comment-text">
+          编程更简单，编程更简单，编程更简单，编程更简单，人生更自由！！
+        </view>
+      </view>
+    </view>
+    <view class="comment-1">
+      <image src="/images/face.png" class="comment-face"></image>
+      <view class="comment-content">
+        <view class="nickname-time">
+           <view class="comment-nickname">防骗小助手</view>
+           <view class="comment-time">2022-4-26 20:16</view>
+        </view>
+        <view class="comment-text">
+          编程更简单，编程更简单，编程更简单，编程更简单，人生更自由！！
+        </view>
+      </view>
+    </view>
+    <view class="comment-1">
+      <image src="/images/face.png" class="comment-face"></image>
+      <view class="comment-content">
+        <view class="nickname-time">
+           <view class="comment-nickname">防骗小助手</view>
+           <view class="comment-time">2022-4-26 20:16</view>
+        </view>
+        <view class="comment-text">
+          编程更简单，编程更简单，编程更简单，编程更简单，人生更自由！！
+        </view>
+      </view>
+    </view>
+    <view class="comment-1">
+      <image src="/images/face.png" class="comment-face"></image>
+      <view class="comment-content">
+        <view class="nickname-time">
+           <view class="comment-nickname">防骗小助手</view>
+           <view class="comment-time">2022-4-26 20:16</view>
+        </view>
+        <view class="comment-text">
+          编程更简单，编程更简单，编程更简单，编程更简单，人生更自由！！
+        </view>
+      </view>
+    </view>

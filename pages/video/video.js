@@ -22,6 +22,13 @@ Page({
   // 新增评论
   submitComment() {
     var that = this;
+    if(app.globalData.userInfo == null){
+      wx.navigateTo({
+        url: '/pages/auth/auth',
+      })
+      // return 
+    } else {
+
     wx.showLoading({
       title: '发布中',
       mask:'true'
@@ -49,6 +56,7 @@ Page({
         }, 500)
       }
     })
+  }
   },
 
   // 获取评论
